@@ -10,7 +10,9 @@
     "commit": "git add . && git cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint": "lint-staged",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release-minor": "standard-version --release-as minor",
+    "release-patch": "standard-version --release-as patch"
   },
   "config": {
     "commitizen": {
