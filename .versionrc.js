@@ -1,10 +1,10 @@
 /**
  * @Author: hy
- * @Date: 2022-02-01 03:20:55
+ * @Date: 2022-02-01 03:43:50
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-01 03:28:20
- * @FilePath: /vue3UseCase/ .versionrc.js
+ * @LastEditTime: 2022-02-01 03:47:17
+ * @FilePath: /vue3UseCase/.versionrc.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
  **/
@@ -12,9 +12,6 @@
  * @see https://www.jianshu.com/p/bfc96f9a7939
  */
 module.exports = {
-  skip: {
-    tag: true,
-  },
   types: [
     { type: "feat", section: "✨ Features | 新功能" },
     { type: "fix", section: "🐛 Bug Fixes | Bug 修复" },
@@ -29,4 +26,6 @@ module.exports = {
     { type: "chore", section: "🚀 Chore | 构建/工程依赖/工具" },
     { type: "ci", section: "👷 Continuous Integration | CI 配置" },
   ],
+  // 更新主版本号 standard-version -- --release-as major
+  // 更新补丁版本 standard-version -- --release-as patch
 };
