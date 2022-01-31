@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="red font-mono diagonal-fractions">home 1/2 3/4</div>
+  <router-view></router-view>
 </template>
 
 <style>
