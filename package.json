@@ -1,6 +1,11 @@
 {
   "name": "vue3_use_case",
   "version": "0.0.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HYzihong/vue3_use_case.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -20,6 +25,10 @@
     }
   },
   "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --color",
+      "prettier --write"
+    ],
     "*.vue": [
       "eslint --fix",
       "prettier --write",
@@ -38,6 +47,8 @@
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@types/node": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
     "@vitejs/plugin-vue": "^2.0.0",
     "@vitejs/plugin-vue-jsx": "^1.3.3",
     "commitizen": "^4.2.4",
@@ -46,13 +57,18 @@
     "element-plus": "^1.3.0-beta.10",
     "eslint": "^8.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.4.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.2",
     "pinia-plugin-persist": "^0.0.93",
     "postcss": "^8.4.5",
+    "postcss-scss": "^4.0.3",
     "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0",
     "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.49.0",
     "standard-version": "^9.3.2",
