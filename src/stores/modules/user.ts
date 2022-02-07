@@ -9,17 +9,17 @@
  * 仅供学习使用~
  */
 // store.js
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 type UserInfo = {
   count: number;
   _age: number;
   name: string;
 };
-export const useStore = defineStore({
-  id: "userInfo",
+export const useUserStore = defineStore({
+  id: 'userInfo',
   state: (): UserInfo => ({
     count: 1,
-    name: "hy",
+    name: 'hy',
     _age: 18,
   }),
   actions: {
@@ -38,9 +38,9 @@ export const useStore = defineStore({
     enabled: true,
     strategies: [
       {
-        key: "userInfo",
+        key: 'userInfo',
         storage: localStorage,
-        paths: ["name", "_age"],
+        paths: ['name', '_age'],
       },
     ],
   },
