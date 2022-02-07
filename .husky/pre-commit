@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# npx husky add .husky/pre-commit "pnpm exec lint-staged"
 pnpm exec lint-staged

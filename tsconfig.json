@@ -9,10 +9,15 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
+      "@views/*": ["src/views/*"],
+      "@types/*": ["src/types/*"],
+      "@comps/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
