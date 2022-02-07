@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:40:46
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 00:17:38
+ * @LastEditTime: 2022-02-08 02:37:42
  * @FilePath: /vue3UseCase/src/routers/index.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/template',
     name: 'Template',
     component: () => import('@/views/comps/index.vue'),
+  },
+  {
+    path: '/qrcode',
+    name: 'Qrcode',
+    component: () => import('@/views/qrcode/index.vue'),
   },
 ];
 

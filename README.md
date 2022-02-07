@@ -3,7 +3,7 @@
  * @Date: 2022-01-31 20:05:21
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 02:03:22
+ * @LastEditTime: 2022-02-08 02:34:39
  * @FilePath: /vue3UseCase/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -20,3 +20,7 @@
 - qrcode 二次封装
 - element-plus 二次封装
 - 一个命令行工具 大致做一些模板的自动生成，一些 log 的输出
+- utils
+  - 全局禁用页面事件
+  - 页面尺寸更改处理
+  - vueUse 标题更改
