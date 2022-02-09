@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 00:46:47
+ * @LastEditTime: 2022-02-09 22:02:49
  * @FilePath: /vue3UseCase/src/main.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -18,12 +18,17 @@ import 'element-plus/theme-chalk/index.css';
 import { setupStore } from './stores';
 import { setupRouter } from './routers';
 import { setupUICpmps } from './plugins/elements-plus';
+// @ts-ignore
+import VueGridLayout from 'vue-grid-layout';
 
 const APP = createApp(App);
 
-// plugins
+// use plugins
 setupStore(APP);
 setupRouter(APP);
 setupUICpmps(APP);
+
+// use components
+APP.use(VueGridLayout);
 
 APP.mount('#app');

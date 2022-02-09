@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:40:46
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 02:37:42
+ * @LastEditTime: 2022-02-09 21:27:37
  * @FilePath: /vue3UseCase/src/routers/index.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -38,6 +38,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/qrcode',
     name: 'Qrcode',
     component: () => import('@/views/qrcode/index.vue'),
+  },
+  {
+    path: '/draggable',
+    name: 'Draggable',
+    component: () => import('@/views/draggable/index.vue'),
+  },
+  {
+    path: '/grid-layout',
+    name: 'GridLayout',
+    component: () => import('@/views/grid-layout/index.vue'),
   },
 ];
 
