@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:40:46
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-09 21:27:37
+ * @LastEditTime: 2022-02-11 23:06:26
  * @FilePath: /vue3UseCase/src/routers/index.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -48,6 +48,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/grid-layout',
     name: 'GridLayout',
     component: () => import('@/views/grid-layout/index.vue'),
+  },
+  {
+    path: '/dayjs',
+    name: 'Dayjs',
+    component: () => import('@/views/dayjs/index.vue'),
   },
 ];
 
