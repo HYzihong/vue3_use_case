@@ -3,15 +3,15 @@
  * @Date: 2022-02-11 23:02:00
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-02-11 23:47:51
+ * @LastEditTime: 2022-02-12 22:21:05
  * @FilePath: /vue3UseCase/src/views/dayjs/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
 -->
 <template>
   <div class="m-5">
-    <h1>dayjs</h1>
-    <el-table :data="date">
+    <h1>Dayjs</h1>
+    <el-table class="m-4" :data="date" border>
       <el-table-column prop="title" label="title" />
       <el-table-column prop="script" label="script" />
       <el-table-column prop="result" label="result" />
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import dayjs from '@/plugins/dayjs/index';
+  import dayjs, { toOrForm } from '@/plugins/dayjs/index';
   import { ref } from 'vue';
   type dayData = {
     title: string;
@@ -49,6 +49,33 @@
       script: `dayjs('2025-01-01').fromNow(true)`,
       result: dayjs('2025-01-01').fromNow(true),
     },
+    {
+      title: '今年距2025-01-01年还有几年(封装)',
+      script: `dayjs('2025-01-01').fromNow(true)`,
+      result: toOrForm('from', '2025-01-01'),
+      // result: dayjs('2025-01-01').fromNow(true),
+    },
+    {
+      title: '今年距2023-01-01年还有几年',
+      script: `dayjs('2023-01-01').fromNow(true)`,
+      result: dayjs('2023-01-01').fromNow(true),
+    },
+    {
+      title: '今年距2023-01-01年还有几年(封装)',
+      script: `dayjs('2023-01-01').fromNow(true)`,
+      result: toOrForm('from', '2023-01-01'),
+      // result: dayjs('2025-01-01').fromNow(true),
+    },
+    {
+      title: '现在是今年的第几天？',
+      script: `dayjs('2023-01-01').fromNow(true)`,
+      result: `今天是今年的第${dayjs(new Date()).dayOfYear()}天`,
+    },
+    {
+      title: '今年的第1天是几月几号',
+      script: `dayjs(new Date()).dayOfYear(1).format('YYYY年MM月DD日')`,
+      result: `今年的第1天是${dayjs(new Date()).dayOfYear(1).format('YYYY年MM月DD日')}`,
+    },
   ]);
-  console.log(dayjs('2025-01-01').fromNow(true).split(' '));
+  // console.log(dayjs('2025-01-01').fromNow(true).split(' '));
 </script>
