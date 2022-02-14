@@ -1,0 +1,16 @@
+// 重写重写的样式
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #22c55e
+    ),
+    'warning': (
+      'base': red
+    )
+  ),
+  $table: (
+    'border-color': #22c55e,
+  )
+);
+// 导入所有样式:
+@use "element-plus/theme-chalk/src/index.scss" as *;

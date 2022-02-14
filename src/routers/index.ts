@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:40:46
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-11 23:06:26
+ * @LastEditTime: 2022-02-14 22:43:25
  * @FilePath: /vue3UseCase/src/routers/index.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -53,6 +53,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dayjs',
     name: 'Dayjs',
     component: () => import('@/views/dayjs/index.vue'),
+  },
+  {
+    path: '/element-plus',
+    name: 'ElementPlus',
+    component: () => import('@/views/elementPlus/index.vue'),
   },
 ];
 

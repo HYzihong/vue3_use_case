@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-02-08 02:22:43
+ * @LastEditTime: 2022-02-14 22:42:27
  * @FilePath: /vue3UseCase/src/App.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -17,7 +17,3 @@
     <router-view />
   </div>
 </template>
-
-<style lang="scss">
-  @import url('./styles/index.scss');
-</style>

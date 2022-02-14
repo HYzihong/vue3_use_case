@@ -91,6 +91,7 @@
     "vite-plugin-windicss": "^1.6.3",
     "vue-grid-layout": "3.0.0-beta1",
     "vue-tsc": "^0.29.8",
+    "@vueuse/core": "^7.6.2",
     "vuedraggable": "^4.1.0",
     "windicss": "^3.4.3"
   }

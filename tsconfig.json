@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "types":["element-plus/global"], // 指定全局组件类型 Volar 支持
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "paths": {

@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 01:39:47
+ * @LastEditTime: 2022-02-14 22:41:57
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -49,7 +49,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "./src/styles/index.scss";`,
+        additionalData: `@use "./src/styles/index.scss" as *;`,
+        // additionalData: `@use "./src/styles/elementPlus/index.scss" as *;`,
+        // additionalData: `@use "./src/styles/index.scss" as *;@use "./src/styles/elementPlus/index.scss" as *;`,
+        // additionalData: `@use "./src/styles/index.scss" as *;@use "./src/styles/elementPlus/index.scss" as *;@use 'element-plus/theme-chalk/index.css' as *;`,
         charset: false,
       },
     },
