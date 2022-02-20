@@ -3,7 +3,7 @@
  * @Date: 2022-01-31 20:05:21
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-08 02:34:39
+ * @LastEditTime: 2022-02-14 00:07:44
  * @FilePath: /vue3UseCase/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -24,3 +24,4 @@
   - 全局禁用页面事件
   - 页面尺寸更改处理
   - vueUse 标题更改
+- 封装全剧缓存
