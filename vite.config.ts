@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-14 22:41:57
+ * @LastEditTime: 2022-02-21 23:45:00
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -54,6 +54,34 @@ export default defineConfig({
         // additionalData: `@use "./src/styles/index.scss" as *;@use "./src/styles/elementPlus/index.scss" as *;`,
         // additionalData: `@use "./src/styles/index.scss" as *;@use "./src/styles/elementPlus/index.scss" as *;@use 'element-plus/theme-chalk/index.css' as *;`,
         charset: false,
+      },
+    },
+  },
+  build: {
+    sourcemap: true, // 输出.map文件
+    minify: 'esbuild', // 混淆器，terser构建后文件体积更小
+    target: 'esnext',
+    chunkSizeWarningLimit: 600,
+    manifest: true,
+    // terserOptions: {
+    //   compress: {
+    //     drop_console: true,
+    //     // drop_debugger: true,
+    //   },
+    // },
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'static/js/[name]-[hash].js',
+        // manualChunks(id) {
+        //   if (id.includes('node_modules')) {
+        //     return id.toString().split('node_modules/')[1].split('/')[0].toString();
+        //   }
+        // },
+        manualChunks: {
+          // 'element-plus': ['element-plus'],
+          ui: ['element-plus', 'windicss', 'figlet', 'vue-grid-layout'],
+          pnpm: ['dayjs', 'pinia', 'vue', 'vue-router'],
+        },
       },
     },
   },
