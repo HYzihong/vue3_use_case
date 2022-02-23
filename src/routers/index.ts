@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:40:46
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-14 22:43:25
+ * @LastEditTime: 2022-02-23 22:06:09
  * @FilePath: /vue3UseCase/src/routers/index.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -58,6 +58,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/element-plus',
     name: 'ElementPlus',
     component: () => import('@/views/elementPlus/index.vue'),
+  },
+  {
+    path: '/copy',
+    name: 'Copy',
+    component: () => import('@/views/TextCopied/index.vue'),
   },
 ];
 
