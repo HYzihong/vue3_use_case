@@ -3,7 +3,7 @@
  * @Date: 2022-01-31 20:05:21
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-14 00:07:44
+ * @LastEditTime: 2022-02-23 23:20:50
  * @FilePath: /vue3UseCase/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -11,17 +11,24 @@
 
 # vue3_use_case
 
-- pinia 基本使用与 vuex 的对比
-- axios 二次封装
-  - 类 swr
-  - 加密
-  - 实现先给与提交成功的提示，后台继续提交信息
-  - qs 请求发送拦截时处理请求
-- qrcode 二次封装
-- element-plus 二次封装
-- 一个命令行工具 大致做一些模板的自动生成，一些 log 的输出
-- utils
-  - 全局禁用页面事件
-  - 页面尺寸更改处理
-  - vueUse 标题更改
-- 封装全剧缓存
+一些 vue3 相关的案例
+
+[`-`] axios 二次封装（类 `swr`,用 `qs` 处理参数,参数加密,实现`乐观ui`）
+
+[`-`]`pinia` 基本使用与` vuex` 的对比
+
+[`*`] `qrcode` 二次封装
+
+[`*`] `windicss` 使用 (引入、静态分析报告 `pnpm css:analysis`、主题)
+
+[`-`] `element-plus` 二次封装(`scss` / `component`)
+
+[`*`] `vueUse` 使用
+
+[`-`] 封装全剧数据缓存
+
+[`-`] 模板自动生成
+
+[`-`] 命令行（模板自动生成、输出一些 `log`）
+
+[`-`] 全局 utils 封装(基于 vueuse,进行一些全局的事件禁用，页面尺寸修改事件的触发)
