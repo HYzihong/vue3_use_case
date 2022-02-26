@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-21 23:45:00
+ * @LastEditTime: 2022-02-26 11:51:59
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -14,6 +14,11 @@ import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 import jsx from '@vitejs/plugin-vue-jsx';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 
 function pathResolve(dir: string) {
   // console.log(resolve(process.cwd(), ".", dir));
@@ -21,7 +26,43 @@ function pathResolve(dir: string) {
 }
 
 export default defineConfig({
-  plugins: [vue(), WindiCSS(), jsx()],
+  plugins: [
+    vue(),
+    WindiCSS(),
+    jsx(),
+    // 按需引入
+    // AutoImport({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
+    // Components({
+    //   resolvers: [ElementPlusResolver()],
+    // }),
+    Components({
+      dirs: ['src/components'],
+      // extensions: ['vue', 'ts', 'tsx'],
+      dts: 'src/types/components.d.ts',
+      resolvers: [
+        // 自动导入 Element Plus 组件
+        ElementPlusResolver({
+          importStyle: 'sass',
+          directives: true,
+          version: '1.3.0-beta.10',
+        }),
+        // 自动导入Icon
+        IconsResolver({
+          enabledCollections: ['ep'],
+        }),
+      ],
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+      imports: ['vue', 'vue-router'],
+      dts: 'src/types/auto-import.d.ts',
+    }),
+    Icons({
+      autoInstall: true,
+    }),
+  ],
   resolve: {
     alias: [
       {

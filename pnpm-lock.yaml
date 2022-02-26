@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': ^16.1.0
   '@commitlint/config-conventional': ^16.0.0
   '@element-plus/icons-vue': ^0.2.6
+  '@iconify-json/ep': ^1.1.1
   '@types/crypto-js': ^4.1.1
   '@types/figlet': ^1.5.4
   '@types/node': ^17.0.13
@@ -48,6 +49,9 @@ specifiers:
   stylelint-config-standard-scss: ^3.0.0
   stylelint-scss: ^3.21.0
   typescript: ^4.4.4
+  unplugin-auto-import: ^0.6.1
+  unplugin-icons: ^0.13.2
+  unplugin-vue-components: ^0.17.21
   vite: ^2.7.2
   vite-plugin-windicss: ^1.6.3
   vue: ^3.2.25
@@ -67,6 +71,7 @@ devDependencies:
   '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/16.1.0_@types+node@17.0.13
   '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/16.0.0
   '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/0.2.6_vue@3.2.29
+  '@iconify-json/ep': registry.npmmirror.com/@iconify-json/ep/1.1.1
   '@types/crypto-js': registry.npmmirror.com/@types/crypto-js/4.1.1
   '@types/figlet': registry.npmmirror.com/@types/figlet/1.5.4
   '@types/node': registry.npmmirror.com/@types/node/17.0.13
@@ -110,6 +115,9 @@ devDependencies:
   stylelint-config-standard-scss: registry.npmmirror.com/stylelint-config-standard-scss/3.0.0_postcss@8.4.5+stylelint@14.3.0
   stylelint-scss: registry.npmmirror.com/stylelint-scss/3.21.0_stylelint@14.3.0
   typescript: registry.npmmirror.com/typescript/4.5.5
+  unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.6.1_@vueuse+core@7.6.2+vite@2.7.13
+  unplugin-icons: registry.npmmirror.com/unplugin-icons/0.13.2_vite@2.7.13
+  unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.17.21_vite@2.7.13+vue@3.2.29
   vite: registry.npmmirror.com/vite/2.7.13_sass@1.49.0
   vite-plugin-windicss: registry.npmmirror.com/vite-plugin-windicss/1.6.3_vite@2.7.13
   vue-grid-layout: registry.npmmirror.com/vue-grid-layout/3.0.0-beta1
@@ -205,12 +213,35 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  registry.npmmirror.com/@antfu/install-pkg/0.1.0:
+    resolution: {integrity: sha512-VaIJd3d1o7irZfK1U0nvBsHMyjkuyMP3HKYVV53z8DKyulkHKmjhhtccXO51WSPeeSHIeoJEoNOKavYpS7jkZw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/install-pkg/-/install-pkg-0.1.0.tgz}
+    name: '@antfu/install-pkg'
+    version: 0.1.0
+    dependencies:
+      execa: registry.npmmirror.com/execa/5.1.1
+      find-up: registry.npmmirror.com/find-up/5.0.0
+    dev: true
+
+  registry.npmmirror.com/@antfu/utils/0.3.0:
+    resolution: {integrity: sha512-UU8TLr/EoXdg7OjMp0h9oDoIAVr+Z/oW9cpOxQQyrsz6Qzd2ms/1CdWx8fl2OQdFpxGmq5Vc4TwfLHId6nAZjA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/utils/-/utils-0.3.0.tgz}
+    name: '@antfu/utils'
+    version: 0.3.0
+    dependencies:
+      '@types/throttle-debounce': registry.npmmirror.com/@types/throttle-debounce/2.1.0
+    dev: true
+
   registry.npmmirror.com/@antfu/utils/0.4.0:
     resolution: {integrity: sha512-gqkpvjkgFUu+s3kP+Ly33OKpo5zvVY3FDFhv5BIb98SncS3KD6DNxPfNDjwHIoyXbz1leWo1j8DtRLZ1D2Jv+Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/utils/-/utils-0.4.0.tgz}
     name: '@antfu/utils'
     version: 0.4.0
     dependencies:
       '@types/throttle-debounce': registry.npmmirror.com/@types/throttle-debounce/2.1.0
+    dev: true
+
+  registry.npmmirror.com/@antfu/utils/0.5.0:
+    resolution: {integrity: sha512-MrAQ/MrPSxbh1bBrmwJjORfJymw4IqSHFBXqvxaga3ZdDM+/zokYF8DjyJpSjY2QmpmgQrajDUBJOWrYeARfzA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/utils/-/utils-0.5.0.tgz}
+    name: '@antfu/utils'
+    version: 0.5.0
     dev: true
 
   registry.npmmirror.com/@babel/code-frame/7.12.11:
@@ -922,6 +953,35 @@ packages:
     name: '@hutson/parse-repository-url'
     version: 3.0.2
     engines: {node: '>=6.9.0'}
+    dev: true
+
+  registry.npmmirror.com/@iconify-json/ep/1.1.1:
+    resolution: {integrity: sha512-554y7xGxjrW0lhz/DJKeHAQngTyLUUfiWxd2AtFacRQwVdftFlslEpt/MzZy/1/rA1VsYf4I6d9GpblhbfOR2g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify-json/ep/-/ep-1.1.1.tgz}
+    name: '@iconify-json/ep'
+    version: 1.1.1
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/1.0.12
+    dev: true
+
+  registry.npmmirror.com/@iconify/types/1.0.12:
+    resolution: {integrity: sha512-6er6wSGF3hgc1JEZqiGpg21CTCjHBYOUwqLmb2Idzkjiw6ogalGP0ZMLVutCzah+0WB4yP+Zd2oVPN8jvJ+Ftg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/types/-/types-1.0.12.tgz}
+    name: '@iconify/types'
+    version: 1.0.12
+    dev: true
+
+  registry.npmmirror.com/@iconify/utils/1.0.23:
+    resolution: {integrity: sha512-Ktdmpe4mkMXQAnnDUz3s6s5aY/BeVPwHC1d5IhG1bgrWVNWFQNUj8cQPMbHpNCSD9MRC5yGxm9/PGPpOWGJLAg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/utils/-/utils-1.0.23.tgz}
+    name: '@iconify/utils'
+    version: 1.0.23
+    dependencies:
+      '@antfu/install-pkg': registry.npmmirror.com/@antfu/install-pkg/0.1.0
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.3.0
+      '@iconify/types': registry.npmmirror.com/@iconify/types/1.0.12
+      debug: registry.npmmirror.com/debug/4.3.3
+      kolorist: registry.npmmirror.com/kolorist/1.5.1
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@interactjs/actions/1.10.11:
@@ -5938,6 +5998,13 @@ packages:
       strip-bom: registry.npmmirror.com/strip-bom/3.0.0
     dev: true
 
+  registry.npmmirror.com/local-pkg/0.4.1:
+    resolution: {integrity: sha512-lL87ytIGP2FU5PWwNDo0w3WhIo2gopIAxPg9RxDYF7m4rr5ahuZxP22xnJHIvaLTe4Z9P6uKKY2UHiwyB4pcrw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/local-pkg/-/local-pkg-0.4.1.tgz}
+    name: local-pkg
+    version: 0.4.1
+    engines: {node: '>=14'}
+    dev: true
+
   registry.npmmirror.com/locate-path/2.0.0:
     resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/locate-path/-/locate-path-2.0.0.tgz}
     name: locate-path
@@ -8469,6 +8536,126 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
+  registry.npmmirror.com/unplugin-auto-import/0.6.1_@vueuse+core@7.6.2+vite@2.7.13:
+    resolution: {integrity: sha512-rSukyyROmSkqL9tjkA88oLhpG4tXYkk2rTpqGaYKjXRNktHEKf03pit8bamPt95KPVfMLjT0+TPKi6ju0toOIw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-auto-import/-/unplugin-auto-import-0.6.1.tgz}
+    id: registry.npmmirror.com/unplugin-auto-import/0.6.1
+    name: unplugin-auto-import
+    version: 0.6.1
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@vueuse/core': '*'
+    peerDependenciesMeta:
+      '@vueuse/core':
+        optional: true
+    dependencies:
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.5.0
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.1.2
+      '@vueuse/core': registry.npmmirror.com/@vueuse/core/7.6.2_vue@3.2.29
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+      magic-string: registry.npmmirror.com/magic-string/0.25.7
+      resolve: registry.npmmirror.com/resolve/1.22.0
+      unplugin: registry.npmmirror.com/unplugin/0.3.2_vite@2.7.13
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin-icons/0.13.2_vite@2.7.13:
+    resolution: {integrity: sha512-Dwfn5DkKrp/BpZV0R/2wgU39j+kjkeuIQ54PmJ9LhXNpNAS+Huf6Fl/PUmUrlWOvMAz0uPo3y/5lQKZUBjBkBQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-icons/-/unplugin-icons-0.13.2.tgz}
+    id: registry.npmmirror.com/unplugin-icons/0.13.2
+    name: unplugin-icons
+    version: 0.13.2
+    peerDependencies:
+      '@svgr/core': '>=5.5.0'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': registry.npmmirror.com/@antfu/install-pkg/0.1.0
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.5.0
+      '@iconify/utils': registry.npmmirror.com/@iconify/utils/1.0.23
+      debug: registry.npmmirror.com/debug/4.3.3
+      kolorist: registry.npmmirror.com/kolorist/1.5.1
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+      unplugin: registry.npmmirror.com/unplugin/0.3.2_vite@2.7.13
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin-vue-components/0.17.21_vite@2.7.13+vue@3.2.29:
+    resolution: {integrity: sha512-jkXksUF6zkNbzHQbw1DdrsQyVoMZGESRZDIGd9x7nUP+65nHdpBCY/JmlxSjKbuTrOwfMsk6FQFa0RpRueOCKg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-vue-components/-/unplugin-vue-components-0.17.21.tgz}
+    id: registry.npmmirror.com/unplugin-vue-components/0.17.21
+    name: unplugin-vue-components
+    version: 0.17.21
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@babel/traverse': ^7.15.4
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@babel/traverse':
+        optional: true
+    dependencies:
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.4.0
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.1.2
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      debug: registry.npmmirror.com/debug/4.3.3
+      fast-glob: registry.npmmirror.com/fast-glob/3.2.11
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.1
+      magic-string: registry.npmmirror.com/magic-string/0.25.7
+      minimatch: registry.npmmirror.com/minimatch/3.0.4
+      resolve: registry.npmmirror.com/resolve/1.22.0
+      unplugin: registry.npmmirror.com/unplugin/0.3.2_vite@2.7.13
+      vue: registry.npmmirror.com/vue/3.2.29
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - vite
+      - webpack
+    dev: true
+
+  registry.npmmirror.com/unplugin/0.3.2_vite@2.7.13:
+    resolution: {integrity: sha512-5d0DMYNKZU+S9eZUiBfw6Co32eRg8myUgBPoWSqG/wDFCUE/WznfSsJnZWi1P9l69x4uLJqt2qVq1xW/AsXFrw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin/-/unplugin-0.3.2.tgz}
+    id: registry.npmmirror.com/unplugin/0.3.2
+    name: unplugin
+    version: 0.3.2
+    peerDependencies:
+      esbuild: '>=0.13'
+      rollup: ^2.50.0
+      vite: ^2.3.0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      vite: registry.npmmirror.com/vite/2.7.13_sass@1.49.0
+      webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.3
+    dev: true
+
   registry.npmmirror.com/upath/2.0.1:
     resolution: {integrity: sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/upath/-/upath-2.0.1.tgz}
     name: upath
@@ -8858,6 +9045,12 @@ packages:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz}
     name: webidl-conversions
     version: 3.0.1
+    dev: true
+
+  registry.npmmirror.com/webpack-virtual-modules/0.4.3:
+    resolution: {integrity: sha512-5NUqC2JquIL2pBAAo/VfBP6KuGkHIZQXW/lNKupLPfhViwh8wNsu0BObtl09yuKZszeEUfbXz8xhrHvSG16Nqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-virtual-modules/-/webpack-virtual-modules-0.4.3.tgz}
+    name: webpack-virtual-modules
+    version: 0.4.3
     dev: true
 
   registry.npmmirror.com/whatwg-url/5.0.0:
