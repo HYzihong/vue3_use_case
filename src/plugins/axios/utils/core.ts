@@ -3,7 +3,7 @@
  * @Date: 2022-02-28 22:22:22
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-28 22:29:32
+ * @LastEditTime: 2022-02-28 22:51:29
  * @FilePath: /vue3UseCase/src/plugins/axios/utils/core.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -17,8 +17,8 @@ export default class {
     TODO
     [-] setHeader 设置 http header
     [*] createAxios 创建 axios 实例
-    [-] setupInterceptors 刷新 axios 实例
-    [-] cancelRequest 取消请求的配置
+    [-] setupInterceptors 刷新 axios 拦截器
+    [*] cancelRequest 取消请求的配置
     [-] token的相关操作
      [-] getToken 获取token >utils/auth.ts
      [-] setToken 设置token >utils/auth.ts
@@ -46,29 +46,7 @@ export default class {
     this.options = options;
     this.axiosInstance = axios.create(options);
     this.setupInterceptors();
-    // this.requestQueue = new Map<string, string>();
-    // this.tokenRefreshing = true;
-    // this.setupTransforms();
   }
-
-  // private setupTransforms(): void {
-  //   const { transformRequest, transformResponse } = this.getTransformAndInterceptor();
-  // }
-  ///**
-  // * 在请求队列中新增接口请求
-  // * @param {object} { apiName, url }
-  // * @return {*}
-  // */
-  // private setRequestQueue({ apiName, url }: { apiName: string; url: string }): boolean {
-  //   console.log(`api ==> ${apiName} : ${url}`);
-  //   if (!this.requestQueue.has(apiName)) {
-  //     this.requestQueue.set(apiName, url);
-  //     return true;
-  //   } else {
-  //     // 已存在对此接口的请求
-  //     return false;
-  //   }
-  // }
 
   /**
    * @description:
@@ -178,27 +156,6 @@ export default class {
    */
   private getTransformAndInterceptor(): any {
     const {
-      /*
-      // `transformRequest` 允许在向服务器发送前，修改请求数据
-      // 它只能用于 'PUT', 'POST' 和 'PATCH' 这几个请求方法
-      // 数组中最后一个函数必须返回一个字符串， 一个Buffer实例，ArrayBuffer，FormData，或 Stream
-      // 你可以修改请求头。
-      transformRequest: [function (data, headers) {
-        // 对发送的 data 进行任意转换处理
-
-        return data;
-      }],
-      */
-      // transformRequest,
-      // `transformResponse` 在传递给 then/catch 前，允许修改响应数据
-      /*
-       transformResponse: [function (data) {
-        // 对接收的 data 进行任意转换处理
-
-        return data;
-      }],
-      */
-      // transformResponse,
       // 拦截器
       // 请求拦截器
       requestInterceptors,
@@ -208,8 +165,6 @@ export default class {
       responseInterceptorsCatch,
     } = this.options;
     return {
-      // transformRequest,
-      // transformResponse,
       requestInterceptors,
       requestInterceptorsCatch,
       responseInterceptors,
