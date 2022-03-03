@@ -3,7 +3,7 @@
  * @Date: 2022-01-31 20:05:21
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-26 12:32:39
+ * @LastEditTime: 2022-03-03 22:55:39
  * @FilePath: /vue3UseCase/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -32,3 +32,7 @@
 [`-`] 命令行（模板自动生成、输出一些 `log`）
 
 [`-`] 全局 utils 封装(基于 vueuse,进行一些全局的事件禁用，页面尺寸修改事件的触发)
+
+[`-`] 测试
+
+[`-`] 多语言
