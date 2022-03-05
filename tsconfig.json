@@ -10,9 +10,14 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types":["element-plus/global"], // 指定全局组件类型 Volar 支持
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
+    "types": [
+      // 指定全局组件类型 Volar 支持
+      "element-plus/global",
+      "vite-plugin-pages/client",
+      "vite/client",
+    ],
     "paths": {
       "@/*": ["src/*"],
       "@views/*": ["src/views/*"],

@@ -7,7 +7,7 @@
     "url": "git+https://github.com/HYzihong/vue3_use_case.git"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "cz": "git-cz",
@@ -98,6 +98,7 @@
     "unplugin-icons": "^0.13.2",
     "unplugin-vue-components": "^0.17.21",
     "vite": "^2.7.2",
+    "vite-plugin-pages": "^0.21.3",
     "vite-plugin-windicss": "^1.6.3",
     "vue-grid-layout": "3.0.0-beta1",
     "vue-tsc": "^0.29.8",

@@ -3,7 +3,7 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-26 11:51:59
+ * @LastEditTime: 2022-03-05 16:21:02
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -19,6 +19,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import Pages from 'vite-plugin-pages';
 
 function pathResolve(dir: string) {
   // console.log(resolve(process.cwd(), ".", dir));
@@ -56,11 +57,33 @@ export default defineConfig({
     }),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-router', '@vueuse/core'],
       dts: 'src/types/auto-import.d.ts',
     }),
     Icons({
       autoInstall: true,
+    }),
+    Pages({
+      // default
+      pagesDir: 'src/views',
+      extensions: ['vue'],
+      // extensions: ['vue', 'md'],
+      importMode: 'async',
+      // 只要包含fruits的路由，就会变为异步懒加载
+      // importMode(path) {
+      //   return path.includes('fruits') ? 'async' : 'sync'
+      // },
+      extendRoute(route: any, parent: any) {
+        console.log('extendRoute ==>', route, parent);
+      },
+      // 当识别到的文件路径包含以下字段时，会自动剔除，比如我们的一些特定的小组件
+      exclude: ['**/components/*', '**/hooks/*'], // 这里的作用是将src目录下，不将含有component字段的组件生成为页面
+      onRoutesGenerated(routes: any[]) {
+        console.log('onRoutesGenerated ==>', routes);
+      },
+      onClientGenerated(clientCode: string) {
+        console.log('onClientGenerated ==>', clientCode);
+      },
     }),
   ],
   resolve: {
