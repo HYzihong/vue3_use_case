@@ -3,15 +3,17 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-02-26 11:51:59
+ * @LastEditTime: 2022-03-03 23:17:10
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
  */
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import path from 'path';
 // plugins
 import vue from '@vitejs/plugin-vue';
+import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import WindiCSS from 'vite-plugin-windicss';
 import jsx from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -30,6 +32,12 @@ export default defineConfig({
     vue(),
     WindiCSS(),
     jsx(),
+    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      include: [path.resolve(__dirname, 'locales/**')],
+    }),
     // 按需引入
     // AutoImport({
     //   resolvers: [ElementPlusResolver()],
@@ -56,7 +64,7 @@ export default defineConfig({
     }),
     AutoImport({
       resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-router', 'vue-i18n', '@vueuse/core'],
       dts: 'src/types/auto-import.d.ts',
     }),
     Icons({
