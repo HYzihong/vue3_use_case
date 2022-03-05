@@ -3,7 +3,6 @@
  * @Date: 2022-02-01 01:19:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-03 23:17:10
  * @FilePath: /vue3UseCase/vite.config.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -21,6 +20,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
+import Pages from 'vite-plugin-pages';
 
 function pathResolve(dir: string) {
   // console.log(resolve(process.cwd(), ".", dir));
@@ -69,6 +69,47 @@ export default defineConfig({
     }),
     Icons({
       autoInstall: true,
+    }),
+    // https://github.com/hannoeru/vite-plugin-pages
+    Pages({
+      // default
+      pagesDir: 'src/views',
+      extensions: ['vue', 'ts', 'tsx'],
+      // extensions: ['vue', 'md'],
+      importMode: 'async',
+      // 只要包含fruits的路由，就会变为异步懒加载
+      // importMode(path) {
+      //   return path.includes('fruits') ? 'async' : 'sync'
+      // },
+      extendRoute(route: any, parent: any) {
+        // 可以获取到每个单个路由对象，可以增加字段
+        // console.log('extendRoute ==>', route);
+        console.log('extendRoute ==>', route, parent);
+        // return {
+        //   ...route,
+        //   meta: { layout: 'layout' },
+        // };
+      },
+      // 自动剔除不要被注册到路由的
+      exclude: ['**/components/**/*.vue', '**/*.d.ts', '**/hooks/*.ts'],
+      // onRoutesGenerated(routes: any[]) {
+      // TODO 路由守卫在哪里写 这里，还是src/routers/index.ts
+      // TODO 路由重定向
+      //   // 可以获取到完整的route[]，通过循环遍历获取之后对route进行处理
+      //   console.log('onRoutesGenerated ==>', routes);
+      //   routes.forEach((route) => {
+      //     console.log('path ==>', route.path);
+      //     return {
+      //       ...route,
+      //       meta: { layout: 'layout' },
+      //     };
+      //   });
+      // },
+      // onClientGenerated(clientCode: string) {
+      //   // 能够完整获取到我们实际生成string格式的(客户端)路由的完整代码
+      //   // 可以通过正则对这个方法进行替换，或者各种字符串骚操作进行替换???
+      //   console.log('onClientGenerated ==>', clientCode);
+      // },
     }),
   ],
   resolve: {

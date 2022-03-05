@@ -3,14 +3,26 @@
  * @Date: 2022-02-11 23:02:00
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-02-13 15:38:48
+ * @LastEditTime: 2022-02-18 14:58:53
  * @FilePath: /vue3UseCase/src/views/dayjs/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
 -->
 <template>
   <div class="m-5">
+    <!-- <count-down-clock /> -->
+    <days-until end-time="2022-04-01" begin-time="2022-02-27" />
+    <!-- <days-until end-time="2022-12-15" begin-time="2022-02-15" /> -->
     <h1>Dayjs</h1>
+    <el-button v-if="isActive" type="warning" @click="pause">暂停</el-button>
+    <el-button v-else type="success" @click="resume">重新开始(恢复)</el-button>
+    <span class="ml-10">倒计时：{{ text }}</span>
+    <el-button
+      @click="secondCountDown()"
+      :disabled="loading"
+      :type="isrun ? 'warning' : 'success'"
+      >{{ isrun ? `${time}s` : '开始' }}</el-button
+    ><el-button v-if="loading" @click="secondCountDown()">请求成功！</el-button>
     <el-table class="m-4" :data="date" border>
       <el-table-column prop="title" label="title" />
       <el-table-column prop="script" label="script" />
@@ -19,13 +31,57 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import dayjs, { toOrForm } from '@/plugins/dayjs/index';
+  import dayjs, { countDown, toOrForm } from '@/plugins/dayjs/index';
+  import { useIntervalFn } from '@vueuse/core';
   import { ref } from 'vue';
+  // import useCountDown from './hooks/useCountDown';
+  import useSecondCountDown from './hooks/useSecondCountDown';
+  import DaysUntil from './components/DaysUntil.vue';
+  // import CountDownClock from './components/CountDownClock.vue';
+  // type
   type dayData = {
     title: string;
     script: string;
     result: string;
   };
+  // const { text, isActive, pause, resume } = useCountDown('2022-12-25');
+  const text = ref('');
+  text.value = dayjs().format('YYYY-MM-DD HH:mm:ss');
+  const endDate = ref('2022-12-25');
+  const interval = ref(1000);
+  const loading = ref(false); // 页面全局的loading状态
+  // methods
+  const { pause, resume, isActive } = useIntervalFn(
+    () => {
+      text.value = countDown(endDate.value, new Date());
+      // console.log(text.value);
+    },
+    interval.value,
+    {
+      immediate: false, //  是否立即执行
+    },
+  );
+  // : 是重命名 = 是赋默认值
+  const { start, time, isActive: isrun, pause: down } = useSecondCountDown();
+  const secondCountDown = (time = 60) => {
+    if (!isrun.value) {
+      // 开始
+      start(time);
+      // ajax请求
+      loading.value = true;
+    } else {
+      // 停止
+      down();
+      loading.value = false;
+    }
+  };
+  /*
+    一般验证码业务流程：
+    点击发送验证码->校验form数据是否合格 
+    ->不合格->return->message alart
+    ->合格->开始定时器 -(loading = true)-> ajax请求 成功or失败 -(loading = false)-> 关闭定时器
+  */
+  // data
   const date = ref<dayData[]>([
     { title: '当前时间', script: 'dayjs()', result: `${dayjs()}` },
     {
@@ -119,6 +175,11 @@
         'minute',
       )}minute(分钟)/${dayjs('2022-02-14').diff(new Date(), 'second')}second(秒)/`,
       // result: `${dayjs('2022-01-01').isoWeeksInYear()}`,
+    },
+    {
+      title: '倒计时',
+      script: '',
+      result: `${text.value}`,
     },
   ]);
   // console.log(dayjs('2025-01-01').fromNow(true).split(' '));
