@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name":"Launch Chrome",
+      "request": "launch",
+      "url":"http://localhost:3000",
+      "sourceMapPathOverrides": {
+        "meteor://💻app/*": "${workspaceFolder}/*",
+        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+        "webpack://?:*/*": "${workspaceFolder}/*"
+      }
+    }
+  ]
+}

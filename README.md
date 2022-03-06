@@ -3,7 +3,7 @@
  * @Date: 2022-01-31 20:05:21
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-05 14:38:02
+ * @LastEditTime: 2022-03-06 22:13:35
  * @FilePath: /vue3UseCase/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -38,3 +38,5 @@
 [`-`] 多语言
 
 [`-`] Form (动态表单、动态表单校验、表单定制化)
+
+[`*`] 增加 debug 配置（打开`vscode`的 `run and debug`，点击` Lunch Chrome` 开启 `debug`）
