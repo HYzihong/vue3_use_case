@@ -81,15 +81,15 @@ export default defineConfig({
       // importMode(path) {
       //   return path.includes('fruits') ? 'async' : 'sync'
       // },
-      extendRoute(route: any, parent: any) {
-        // 可以获取到每个单个路由对象，可以增加字段
-        // console.log('extendRoute ==>', route);
-        console.log('extendRoute ==>', route, parent);
-        // return {
-        //   ...route,
-        //   meta: { layout: 'layout' },
-        // };
-      },
+      // extendRoute(route: any, parent: any) {
+      //   // 可以获取到每个单个路由对象，可以增加字段
+      //   // console.log('extendRoute ==>', route);
+      //   console.log('extendRoute ==>', route, parent);
+      //   // return {
+      //   //   ...route,
+      //   //   meta: { layout: 'layout' },
+      //   // };
+      // },
       // 自动剔除不要被注册到路由的
       exclude: ['**/components/**/*.vue', '**/*.d.ts', '**/hooks/*.ts'],
       // onRoutesGenerated(routes: any[]) {

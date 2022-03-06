@@ -2,5 +2,10 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "stylelint.validate": [
     "vue"
+  ],
+  "i18n-ally.localesPaths": [
+    "locales",
+    "src/plugins/i18n",
+    "src/views/i18n"
   ]
 }
